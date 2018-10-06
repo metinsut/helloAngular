@@ -1,0 +1,51 @@
+<p>
+  user works!
+</p>
+<p>
+  {{name}}
+</p>
+<p>
+  {{age}}
+</p>
+<h1>EDIT USER</h1>
+<form style="width: 30%">
+  <fieldset style="padding: 5px">
+    <p>name</p>
+    <input type="text" [(ngModel)]="name" name="name">
+  </fieldset>
+  <fieldset style="padding: 5px">
+    <p>age</p>
+    <input type="number" [(ngModel)]="age" name="age">
+  </fieldset>
+</form>
+
+
+<br>
+
+<h1>ITEMS</h1>
+<ul>
+  <li *ngFor="let item of items let i = index">
+    {{i+1}} - {{item}}
+    <button (click)="removeItem(item,i)">Delete</button>
+  </li>
+</ul>
+
+<br>
+<br>
+
+<form (submit)="addItems(item.value)">
+  <input type="text" #item>
+</form>
+
+
+<br>
+
+<h1>List</h1>
+<ul>
+  <li *ngFor="let item of users">
+    <p>{{item.id}}</p>
+    <p>{{item.title}}</p>
+    <p>{{item.userId}}</p>
+    <hr>
+  </li>
+</ul>
